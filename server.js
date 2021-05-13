@@ -20,6 +20,7 @@ app.use(routes)
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/book-search");
 
+// Start the API server
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
