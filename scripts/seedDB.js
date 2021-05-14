@@ -6,11 +6,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/book-search");
 
 const bookSeed = [
   {
-    title: "",
-    author: "",
+    title: "Test",
+    author: "Test",
     link: "",
     image:"",
-    description: ""
+    description: "Test, test"
   }
 ];
 
