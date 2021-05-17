@@ -28,7 +28,7 @@
 
   ## Live-Link💡
   
-  Here's the deployed portfolio. [ClickMe](https://bellasantiago.github.io/)
+  Here is the deployed app. [ClickMe](https://book-search-reactbs.herokuapp.com/)
 
   ---
 
