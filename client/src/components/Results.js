@@ -17,7 +17,8 @@ class Results extends Component {
                                             <p class="mb-0 text-white-50">{result.description}</p>
                                             <hr class="d-none d-lg-block mb-0" />
                                             <div>
-                                                <button className="btn badge-pill btn-primary mt-3 ml-3" > Save
+                                                <button className="btn badge-pill btn-primary mt-3 ml-3"
+                                                    onClick={this.props.handleSave}> Save
                                                 </button>
                                             </div>
                                         </div>
@@ -27,7 +28,6 @@ class Results extends Component {
                         </div>
                         <br></br>
                     </div>
-
                 ))}
             </div>
         )

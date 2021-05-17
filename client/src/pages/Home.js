@@ -10,7 +10,8 @@ class Home extends Component {
 
   state = {
     myBooks: [],
-    search: ""
+    search: "",
+    mySaved: []
   };
 
   componentDidMount() {
@@ -43,34 +44,44 @@ class Home extends Component {
         console.error(err));
   };
 
-   handleFormSubmit = event => {
+  handleFormSubmit = event => {
     event.preventDefault();
     this.search(this.state.search);
-    this.setState({search: ""})
+    this.setState({ search: "" })
   };
 
-   handleInputChange = event => {
+  handleInputChange = event => {
     event.preventDefault();
     console.log(event);
-    this.setState({search: event.target.value})
+    this.setState({ search: event.target.value })
+  };
+
+  handleSave = savedBook => {
+    savedBook.preventDefault();
+    console.log(savedBook);
+    API.saveBook(savedBook)
+      .then(saved => 
+        this.setState({ mySaved: this.state.mySaved.concat([saved]) }))
+      .catch(err => console.error(err));
   }
 
   render() {
     return (
       <div>
         <Hero />
-          <Search
-            title="Search"
-            id="Search"
-            handleFormSubmit={this.handleFormSubmit}
-            handleInputChange={this.handleInputChange}
-            search={this.state.search}
-          />
-          <br></br>
-          <br></br>
-          <Results 
-            myBooks={this.state.myBooks}
-          />
+        <Search
+          title="Search"
+          id="Search"
+          handleFormSubmit={this.handleFormSubmit}
+          handleInputChange={this.handleInputChange}
+          search={this.state.search}
+        />
+        <br></br>
+        <br></br>
+        <Results
+          myBooks={this.state.myBooks}
+          handleSave={this.state.mySaved}
+        />
       </div>
     )
   }
