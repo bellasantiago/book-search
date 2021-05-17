@@ -475,6 +475,7 @@ mark,
 
 .img-fluid {
   max-width: 100%;
+  align-items: center;
   height: auto;
 }
 
