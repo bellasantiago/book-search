@@ -11,6 +11,8 @@ function Home() {
           title="Search"
           id="Search"
           />
+          <br></br>
+          <br></br>
           <Results />
         </div>
     )
